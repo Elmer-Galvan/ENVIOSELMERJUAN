@@ -18,6 +18,7 @@ public class View extends JFrame {
     public JComboBox<String> comboTarifa;
     public JComboBox<String> comboModoEnvio;
     public JButton btnEnviar;
+    public JButton btnCancelar; // 🔹 Nuevo botón
     public JTable tablaEnvios;
     public JLabel txtCosto;
 
@@ -115,6 +116,11 @@ public class View extends JFrame {
         btnEnviar = new JButton("Enviar");
         btnEnviar.setBounds(320, 105, 120, 30);
         panel.add(btnEnviar);
+
+        // 🔹 Botón cancelar pedido
+        btnCancelar = new JButton("Cancelar Pedido");
+        btnCancelar.setBounds(600, 105, 150, 30);
+        panel.add(btnCancelar);
 
         return panel;
     }
