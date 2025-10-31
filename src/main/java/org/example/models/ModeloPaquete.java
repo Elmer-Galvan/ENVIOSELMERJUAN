@@ -24,8 +24,6 @@ public class ModeloPaquete {
     /** Peso del paquete en kilogramos */
     private double peso;
 
-    /** Descripción del contenido del paquete */
-    private String descripcion;
 
     /** Estrategia para calcular el costo (Patrón Strategy) */
     private EstrategiaCosto estrategiaCosto;
@@ -38,6 +36,8 @@ public class ModeloPaquete {
 
     /** Contador estático para generar IDs únicos */
     private static int contadorId = 1;
+
+    private String destino;
 
     /**
      * Constructor completo para crear un paquete.
@@ -54,7 +54,7 @@ public class ModeloPaquete {
 
         this.id = contadorId++;
         this.peso = peso;
-        this.descripcion = descripcion;
+        this.destino = destino;
         this.estrategiaCosto = estrategiaCosto;
         this.envio = envio;
         this.costoCalculado = 0.0;
@@ -155,7 +155,7 @@ public class ModeloPaquete {
         sb.append("═══════════════════════════════════════\n");
         sb.append(String.format("🆔 ID: %d\n", id));
         sb.append(String.format("⚖️  Peso: %.2f kg\n", peso));
-        sb.append(String.format("📝 Descripción: %s\n", descripcion));
+        sb.append(String.format("📝 Descripción: %s\n", destino));
 
         if (estrategiaCosto != null) {
             sb.append(String.format("💰 Tipo de envío: %s\n",
@@ -182,8 +182,36 @@ public class ModeloPaquete {
         return peso;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public static int getContadorId() {
+        return contadorId;
+    }
+
+    public static void setContadorId(int contadorId) {
+        ModeloPaquete.contadorId = contadorId;
+    }
+
+    public void setCostoCalculado(double costoCalculado) {
+        this.costoCalculado = costoCalculado;
+    }
+
+    public void setEstrategiaCosto(EstrategiaCosto estrategiaCosto) {
+        this.estrategiaCosto = estrategiaCosto;
     }
 
     public EstrategiaCosto getEstrategiaCosto() {
@@ -204,7 +232,6 @@ public class ModeloPaquete {
      * Valida los parámetros del constructor.
      *
      * @param peso Peso a validar
-     * @param descripcion Descripción a validar
      * @param estrategia Estrategia a validar (puede ser null)
      * @param envio Envío a validar (puede ser null)
      * @throws IllegalArgumentException si los parámetros son inválidos
@@ -221,4 +248,6 @@ public class ModeloPaquete {
                     "La descripción no puede ser null o vacía");
         }
     }
+
+
 }

@@ -36,7 +36,7 @@ public class EstadoEnTransito extends EstadoEnvio {
      */
     @Override
     public String mostrarEstado() {
-        return "🚚 EN TRÁNSITO: El paquete está en camino a su destino";
+        return "🚚 EN TRÁNSITO";
     }
 
     /**

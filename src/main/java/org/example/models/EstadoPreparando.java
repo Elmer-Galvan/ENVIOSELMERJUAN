@@ -36,7 +36,7 @@ public class EstadoPreparando extends EstadoEnvio {
      */
     @Override
     public String mostrarEstado() {
-        return "📦 PREPARANDO: El paquete está siendo preparado para su envío";
+        return "📦 PREPARANDO";
     }
 
     /**

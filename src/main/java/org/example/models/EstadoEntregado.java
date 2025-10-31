@@ -39,7 +39,7 @@ public class EstadoEntregado extends EstadoEnvio {
      */
     @Override
     public String mostrarEstado() {
-        return "✅ ENTREGADO: El paquete ha sido entregado exitosamente";
+        return "✅ ENTREGADO";
     }
 
     /**
